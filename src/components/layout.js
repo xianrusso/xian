@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
+import rhythm from "../utils/typography"
 
 import Header from "./header"
 import "./layout.css"
@@ -9,7 +10,7 @@ import "./layout.css"
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query {
         site {
           siteMetadata {
             title
