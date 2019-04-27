@@ -8,11 +8,12 @@ import Header from "./header"
 import "./layout.css"
 
 const colors = keyframes`
-  0% { background: #f9e9d2 }
-  25% { background: #e3b48c }
-  50% { background: #966a57 }
-  75% { background: #4b2828 }
-  100% { bcakground: #f9e9d2 }
+  0% { background: #7baea9 }
+  20% { background: #6fa597}
+  40% { background: #619a87 }
+  60% { background: #478868 }
+  80% { background: #387f55 }
+  100% { bcakground: #7baea9 }
 `
 
 const Layout = ({ children }) => (
@@ -30,27 +31,14 @@ const Layout = ({ children }) => (
       <>
         <div
           css={css`
-            width: 100vw;
+            width: 100%;
             height: 100vh;
-            animation: ${colors} 10s ease infinite;
+            background: #7baea9;
+            animation: ${colors} 10s linear infinite;
           `}
         >
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-          >
-            <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-          </div>
+          
+          
         </div>
       </>
     )}
