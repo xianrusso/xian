@@ -18,6 +18,12 @@ const colors = keyframes`
   100% { bcakground: #7baea9 }
 `
 
+const gradient = keyframes`
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+`
+
 const Button = () => {
   return (
     <a
@@ -28,7 +34,7 @@ const Button = () => {
         background: transparent;
         border: 1px solid white;
         text-decoration: none;
-        color: black;
+        color: white;
         padding: 8px;
         &:hover {
           cursor: pointer;
@@ -63,10 +69,10 @@ const Layout = ({ children }) => (
             margin: 0 auto;
             width: 100%;
             height: 100vh;
-            background: #7baea9;
-            animation: ${colors} 10s linear infinite;
-            display: flex;
-            
+            background: linear-gradient(-45deg, #e15239, 	#f8c169, #dba8cd, #8ebc4f, 	#185fad);
+            background-size: 500% 500%;
+            animation: ${gradient} 20s ease infinite;
+            display: flex; 
             justify-content: center;
             align-items: center;
           `}
@@ -77,8 +83,20 @@ const Layout = ({ children }) => (
               width: 70%;
             `}
           >
-            <h1>Christian Russo</h1>
-            <p>Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.</p>
+            <h1
+              css={css`
+                color: white;
+              `}
+            >
+              Christian Russo
+            </h1>
+            <p
+              css={css`
+                color: white;
+              `}
+            >
+              Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.
+            </p>
             <ul
               css={css`
                 list-style: none;
@@ -95,7 +113,7 @@ const Layout = ({ children }) => (
                   href="https://github.com/xianrusso"
                   css={css`
                     text-decoration: none;
-                    color: black;
+                    color: white;
                     display: flex;
                     flex-direction: row;
                     &:hover {
@@ -122,7 +140,7 @@ const Layout = ({ children }) => (
                   href="https://www.instagram.com/fotoxian/?hl=en"  
                   css={css`
                     text-decoration: none;
-                    color: black;
+                    color: white;
                     display: flex;
                     flex-direction: row;
                   `}  
@@ -149,7 +167,7 @@ const Layout = ({ children }) => (
                 css={css`
                   padding-left: 15px;
                   text-decoration: none;
-                  color: black;
+                  color: white;
                 `}
               >
                 <IoIosMail></IoIosMail>
