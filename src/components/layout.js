@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import { css, jsx, keyframes } from "@emotion/core"
 import rhythm from "../utils/typography"
 import { GoMarkGithub } from "react-icons/go"
-import { IoLogoInstagram, IoIosMail } from "react-icons/io"
+import { IoLogoInstagram, IoIosMail, IoIosAttach } from "react-icons/io"
 
 import Header from "./header"
 import "./layout.css"
@@ -20,9 +20,28 @@ const colors = keyframes`
 
 const Button = () => {
   return (
-    <button>
-      
-    </button>
+    <a
+      css={css`
+        display: flex;
+        border-radius: 8%;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid white;
+        text-decoration: none;
+        color: black;
+        padding: 8px;
+        &:hover {
+          cursor: pointer;
+        }
+      `}
+    >
+      <IoIosAttach></IoIosAttach>
+      <span
+        css={css`
+          text-align: center;
+        `}
+      >View Resume</span>
+    </a>
   )
 }
 
@@ -59,7 +78,7 @@ const Layout = ({ children }) => (
             `}
           >
             <h1>Christian Russo</h1>
-            <p>Hello!  I'm a full-stack develop and writer based in Baltimore.</p>
+            <p>Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.</p>
             <ul
               css={css`
                 list-style: none;
@@ -127,6 +146,11 @@ const Layout = ({ children }) => (
               <Button></Button>
               <a
                 href="/"
+                css={css`
+                  padding-left: 15px;
+                  text-decoration: none;
+                  color: black;
+                `}
               >
                 <IoIosMail></IoIosMail>
               </a>
