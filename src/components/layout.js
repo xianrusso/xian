@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import { css, jsx, keyframes } from "@emotion/core"
 import rhythm from "../utils/typography"
 import { GoMarkGithub } from "react-icons/go"
-import { IoLogoInstagram } from "react-icons/io"
+import { IoLogoInstagram, IoIosMail } from "react-icons/io"
 
 import Header from "./header"
 import "./layout.css"
@@ -17,6 +17,14 @@ const colors = keyframes`
   80% { background: #387f55 }
   100% { bcakground: #7baea9 }
 `
+
+const Button = () => {
+  return (
+    <button>
+      
+    </button>
+  )
+}
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -111,6 +119,18 @@ const Layout = ({ children }) => (
                 </a>
               </li>
             </ul>
+            <div
+              css={css`
+                display: flex;
+              `}
+            >
+              <Button></Button>
+              <a
+                href="/"
+              >
+                <IoIosMail></IoIosMail>
+              </a>
+            </div>
             
             {children}
           </div>
