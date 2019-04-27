@@ -1,12 +1,3 @@
-import React from "react"
-import { Link } from "gatsby"
+import Home from "../pages/Home"
 
-import Layout from "../components/layout"
-
-const IndexPage = () => (
-  <Layout>
-    
-  </Layout>
-)
-
-export default IndexPage
+export default Home

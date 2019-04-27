@@ -2,20 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { css, jsx, keyframes } from "@emotion/core"
-import rhythm from "../utils/typography"
 import { GoMarkGithub } from "react-icons/go"
 import { IoLogoInstagram, IoIosMail, IoIosAttach } from "react-icons/io"
 
-import Header from "./SocialButton"
-import "./layout.css"
-
-const colors = keyframes`
-  0% { background: #7baea9 }
-  20% { background: #6fa597}
-  40% { background: #619a87 }
-  60% { background: #478868 }
-  80% { background: #387f55 }
-  100% { bcakground: #7baea9 }
+const hoverEffect = keyframes`
+  0% { opacity: 0.7; }
+  100% { opacity: 1.0; }
 `
 
 const gradient = keyframes`
@@ -26,32 +18,76 @@ const gradient = keyframes`
 
 const Button = () => {
   return (
-    <a
+    <Link
+      to="/resume"
       css={css`
-        display: flex;
-        border-radius: 8%;
-        justify-content: center;
-        background: transparent;
-        border: 1px solid white;
         text-decoration: none;
+        display: flex;
+        border-radius: 2em;
+        border-width: initial;
+        border-color: initial;
+        border-style: none;
+        font-weight: 400;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid white;
         color: white;
-        padding: 8px;
+        padding: .25em .5em;
+        text-transform: uppercase;
         &:hover {
           cursor: pointer;
+          animation: ${hoverEffect} 1s ease forwards;
         }
+        opacity: 0.7;
       `}
     >
-      <IoIosAttach></IoIosAttach>
+      <IoIosAttach
+        css={css`
+          margin-right: .1em;
+          font-size: 1.75em;
+        `}
+      />
       <span
         css={css`
           text-align: center;
+          font-size: 0.85em;
         `}
-      >View Resume</span>
+      >
+        View Resume
+      </span>
+    </Link>
+  )
+}
+
+const EmailButton = () => {
+  return (
+    <a
+      href="mailto:iamchristianrusso@gmail.com"
+      css={css`
+        padding-left: 15px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: .7;
+        &:hover {
+          animation: ${hoverEffect} 1s ease forwards;
+        }
+      `}
+    >
+      <IoIosMail
+        css={css`
+          margin-right: .1em;
+          font-size: 1.75em;
+        `}
+      />
     </a>
   )
 }
 
-const Layout = ({ children }) => (
+const Home = ({ children }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -86,6 +122,8 @@ const Layout = ({ children }) => (
             <h1
               css={css`
                 color: white;
+                font-size: 3.7em;
+                text-shadow: 2px 2px #bbb;
               `}
             >
               Christian Russo
@@ -93,6 +131,8 @@ const Layout = ({ children }) => (
             <p
               css={css`
                 color: white;
+                font-size: 1em;
+                text-shadow: .65px .65px #bbb;
               `}
             >
               Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.
@@ -116,12 +156,20 @@ const Layout = ({ children }) => (
                     color: white;
                     display: flex;
                     flex-direction: row;
+                    &:link, &:hover, &:active, &:visited { text-decoration: none; }
+                    opacity: .7;
                     &:hover {
-                      color: red;
+                      animation: ${hoverEffect} 1s ease forwards;
                     }
                   `}  
                 >
-                  <GoMarkGithub></GoMarkGithub>
+                  <GoMarkGithub
+                    css={css`
+                      margin-right: .1em;
+                      font-size: 1.75em;
+                      
+                    `}
+                  />
                   <p
                     css={css`
                       padding-left: 8px;
@@ -143,9 +191,18 @@ const Layout = ({ children }) => (
                     color: white;
                     display: flex;
                     flex-direction: row;
+                    opacity: .7;
+                    &:hover {
+                      animation: ${hoverEffect} 1s ease forwards;
+                    }
                   `}  
                 >
-                  <IoLogoInstagram></IoLogoInstagram>
+                  <IoLogoInstagram
+                    css={css`
+                      margin-right: .1em;
+                      font-size: 1.75em;
+                    `}
+                  />
                   <p
                     css={css`
                       padding-left: 8px;
@@ -162,16 +219,7 @@ const Layout = ({ children }) => (
               `}
             >
               <Button></Button>
-              <a
-                href="/"
-                css={css`
-                  padding-left: 15px;
-                  text-decoration: none;
-                  color: white;
-                `}
-              >
-                <IoIosMail></IoIosMail>
-              </a>
+              <EmailButton />
             </div>
             
             {children}
@@ -182,8 +230,8 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
+Home.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Home
