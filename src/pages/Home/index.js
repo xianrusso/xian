@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, StaticQuery, graphql } from "gatsby"
-import { css, jsx, keyframes } from "@emotion/core"
+import { css, keyframes } from "@emotion/core"
 import { GoMarkGithub } from "react-icons/go"
 import { IoLogoInstagram, IoIosMail, IoIosAttach } from "react-icons/io"
 
@@ -19,21 +19,21 @@ const gradient = keyframes`
 const Button = () => {
   return (
     <Link
-      to="/resume"
+      to="/Resume/"
       css={css`
         text-decoration: none;
         display: flex;
-        border-radius: 2em;
-        border-width: initial;
-        border-color: initial;
-        border-style: none;
+        // border-radius: 2em;
+        // border-width: initial;
+        // border-color: initial;
+        // border-style: none;
         font-weight: 400;
         justify-content: center;
         align-items: center;
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid white;
+        // background: rgba(255, 255, 255, 0.2);
+        // border: 1px solid white;
         color: white;
-        padding: .25em .5em;
+        // padding: .25em .5em;
         text-transform: uppercase;
         &:hover {
           cursor: pointer;
