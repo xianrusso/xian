@@ -6,7 +6,6 @@ import rhythm from "../utils/typography"
 import { GoMarkGithub } from "react-icons/go"
 import { IoLogoInstagram, IoIosMail, IoIosAttach } from "react-icons/io"
 
-import Header from "./SocialButton"
 import "./layout.css"
 
 const colors = keyframes`
