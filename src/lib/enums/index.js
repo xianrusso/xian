@@ -59,5 +59,5 @@ export const RESUME = {
 }
 
 export const SOURCES = {
-  STYLES: 'https://fonts.googleapis.com/css?family=Fira+Sans:300,400',
+  STYLES: 'https://fonts.googleapis.com/css?family=Bitter:700|Oxygen',
 }
