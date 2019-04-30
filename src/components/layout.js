@@ -6,8 +6,6 @@ import rhythm from "../utils/typography"
 import { GoMarkGithub } from "react-icons/go"
 import { IoLogoInstagram, IoIosMail, IoIosAttach } from "react-icons/io"
 
-import "./layout.css"
-
 const colors = keyframes`
   0% { background: #7baea9 }
   20% { background: #6fa597}

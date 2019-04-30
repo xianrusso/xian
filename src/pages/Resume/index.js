@@ -1,5 +1,11 @@
 import React from "react"
 import { css, keyframes } from "@emotion/core"
+import {
+  Background as BackgroundStyled,
+  Header as HeaderStyled,
+  SideBar as SideBarStyled,
+} from "./styles"
+import {Helmet} from "react-helmet"
 
 const gradient = keyframes`
   0% { background-position: 0% 50% }
@@ -17,36 +23,6 @@ const slideDown = keyframes`
     transform: translateY(0);
   }
 `
-
-const Background = () => (
-  <div
-    css={css`
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      background: red;
-    `}
-  >
-
-  </div>
-)
-
-const Header = () => {
-  return (
-    <div
-      css={css`
-        height: 50%;
-        width: 100%;
-        background: linear-gradient(-45deg, #e15239, 	#f8c169, #dba8cd, #8ebc4f, 	#185fad);
-        background-size: 500% 500%;
-        animation: ${gradient} 20s ease infinite;
-      `}
-    >
-    </div>
-  )
-}
 
 const Name = () => {
   return (
@@ -66,20 +42,14 @@ const Name = () => {
   )
 }
 
-const Div = ({ data }) => (
-  <div
-    css={css`
-      width: 30%;
-    `}
-  >
-    {data}
-  </div>
-)
-
 const Resume = ({ data }) => {
   return (
     <>
-      <Background></Background>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Bitter:700|Oxygen' />
+      </Helmet>
+      <BackgroundStyled></BackgroundStyled>
     </>
   )
 }
