@@ -19,7 +19,7 @@ const gradient = keyframes`
 const Button = () => {
   return (
     <Link
-      to="/Resume/"
+      to="/resume/"
       css={css`
         text-decoration: none;
         display: flex;

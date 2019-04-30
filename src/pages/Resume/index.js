@@ -18,22 +18,20 @@ const slideDown = keyframes`
   }
 `
 
-const Background = () => {
-  return (
-    <div
-      css={css`
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        background: red;
-      `}
-    >
+const Background = () => (
+  <div
+    css={css`
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      background: red;
+    `}
+  >
 
-    </div>
-  )
-}
+  </div>
+)
 
 const Header = () => {
   return (
@@ -68,26 +66,22 @@ const Name = () => {
   )
 }
 
-const Resume = () => {
+const Div = ({ data }) => (
+  <div
+    css={css`
+      width: 30%;
+    `}
+  >
+    {data}
+  </div>
+)
+
+const Resume = ({ data }) => {
   return (
     <>
-      <Background>
-        <Header>
-          <Name>Christian Russo</Name>
-          <Description>Developer / Writer</Description>
-        </Header>
-        
-        <SideBar></SideBar>
-
-        <Portfolio></Portfolio>
-
-        <Contact></Contact>
-
-        <Experience></Experience>
-
-      </Background>
+      <Background></Background>
     </>
   )
 }
 
-export default Resume;
+export default Resume
