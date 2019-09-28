@@ -92,7 +92,15 @@ const Layout = ({ children }) => (
                 color: white;
               `}
             >
-              Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.
+            Hello fellow hoomans (and bots)!  Welcome to my humble internet abode.  I like to create content for the Web, which you can view some projects <a href="https://github.com/xianrusso/">here</a>.  I also dabble in writing and you can view some of my published works at this <Link to="/writing">link</Link>.  If you enjoy amateur analog photography, check out my <Link to="/fotos">fotos</Link>.
+            </p>
+
+            <p
+                css={css`
+                    color: white;    
+                `}
+            >
+            Whether you're a gazillionaire angel investor pining to gift me a $1,000,000 startup fund, or an employer looking for a trusted developer, or simply local to the area and want to grab a coffee and chat, <Link to="/contact">drop me a line</Link>
             </p>
             <ul
               css={css`
