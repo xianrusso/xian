@@ -135,7 +135,7 @@ const Home = ({ children }) => (
                 text-shadow: .65px .65px #bbb;
               `}
             >
-              Hello!  I am a full-stack develop and writer based in Baltimore, Maryland.
+              Hello!  I am a full-stack developer and writer based in Baltimore, Maryland.
             </p>
             <ul
               css={css`
