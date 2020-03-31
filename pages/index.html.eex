@@ -1,0 +1,20 @@
+---
+title: test
+label: Home
+---
+
+<body>
+	<div id="container">
+		<div id="text-container">
+			<h1 class="title">Christian Russo</h1>
+		</div>
+
+		<div id="image-container">
+          <div class="pic">
+            <img id="prof" alt="me" src="<%= asset("images/belgrade5.jpg")%>">
+          </div>	
+		</div>
+	</div>
+	
+
+</body>

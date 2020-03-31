@@ -1,0 +1,8 @@
+<nav class="nav">
+  <ul>
+  <p class="site-title"><a href="<%= base() %>"><%= @site.name %></a></p> 
+    <li></li>
+    <li><a href="<%= page "index" %>">Home</a></li>
+    <li><a href="<%= base "posts" %>">Posts</a></li>
+  </ul>
+</nav>
