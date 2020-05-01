@@ -24,18 +24,11 @@ function main() {
   const color = 0xffffff;
   const intensity = 1;
   const ambientLight = new THREE.AmbientLight(color, intensity);
-  //ambientLight.castShadow = true;
   scene.add(ambientLight);
     
   const dirLight = new THREE.DirectionalLight(color, intensity);
   dirLight.position.set = (100, 100, -2); 
-//   dirLight.castShadow = true;
   scene.add(dirLight);
-  
-//   dirLight.shadow.mapSize.width = 512;
-//   dirLight.shadow.mapSize.height = 512;
-//   dirLight.shadow.camera.near = 0.5;
-//   dirLight.shadow.camera.far = 500;
   
   const geoWidth = 1;
   const geoHeight = 1;
@@ -106,12 +99,19 @@ function onMouseMove(event) {
 function onResize(event) {
   const width = window.innerWidth;
   const height = window.innerHeight;
+  const pixelRatio = window.devicePixelRatio;
+  const cwidth = canvas.clientWidth * pixelRatio | 0;
+  const cheight = canvas.clientHeight * pixelRatio | 0;
+  const needResize = canvas.width !== width || canvas.height !== height;
+  if (needResize) {
+    renderer.setSize(cwidth, cheight, false);
+  }
   
   windowHalf.set(width/2, height/2);
   
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
+  //renderer.setSize(width, height);
 }
 
 function anim() {
