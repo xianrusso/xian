@@ -39,7 +39,7 @@ a {
 #code {
     position: absolute;
     top: 0;
-    right: calc(45%);
+    right: calc(49%);
     /* right: calc(-49%); */
     /*right: calc(100%/2);*/
 }
@@ -55,6 +55,6 @@ a {
 #name {
     position: absolute;
     bottom: 0;
-    right: calc(45%);
+    right: calc(49%);
     /* right: calc(-49%); */
 }
