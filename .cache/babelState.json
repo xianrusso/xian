@@ -2,25 +2,7 @@
   "stages": {
     "develop": {
       "plugins": [],
-      "presets": [
-        {
-          "name": "@babel/preset-typescript",
-          "options": {
-            "plugins": [],
-            "isTSX": true,
-            "jsxPragma": "jsx",
-            "allExtensions": true
-          }
-        },
-        {
-          "name": "@emotion/babel-preset-css-prop",
-          "options": {
-            "sourceMap": true,
-            "autoLabel": true,
-            "plugins": []
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -28,25 +10,7 @@
     },
     "develop-html": {
       "plugins": [],
-      "presets": [
-        {
-          "name": "@babel/preset-typescript",
-          "options": {
-            "plugins": [],
-            "isTSX": true,
-            "jsxPragma": "jsx",
-            "allExtensions": true
-          }
-        },
-        {
-          "name": "@emotion/babel-preset-css-prop",
-          "options": {
-            "sourceMap": true,
-            "autoLabel": true,
-            "plugins": []
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -54,25 +18,7 @@
     },
     "build-html": {
       "plugins": [],
-      "presets": [
-        {
-          "name": "@babel/preset-typescript",
-          "options": {
-            "plugins": [],
-            "isTSX": true,
-            "jsxPragma": "jsx",
-            "allExtensions": true
-          }
-        },
-        {
-          "name": "@emotion/babel-preset-css-prop",
-          "options": {
-            "sourceMap": true,
-            "autoLabel": true,
-            "plugins": []
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -80,25 +26,7 @@
     },
     "build-javascript": {
       "plugins": [],
-      "presets": [
-        {
-          "name": "@babel/preset-typescript",
-          "options": {
-            "plugins": [],
-            "isTSX": true,
-            "jsxPragma": "jsx",
-            "allExtensions": true
-          }
-        },
-        {
-          "name": "@emotion/babel-preset-css-prop",
-          "options": {
-            "sourceMap": true,
-            "autoLabel": true,
-            "plugins": []
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"

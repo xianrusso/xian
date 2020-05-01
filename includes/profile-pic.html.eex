@@ -1,1 +1,0 @@
-<img src="<%= asset("images/belgrade5.jpg") %>" alt="me">
