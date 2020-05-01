@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    padding: 0;
+    margin: 0;
+    margin-top: -20px;
+    height: 100%;
+    width: 100%;
+}
+  
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    z-index: -1;
+}
+
+h1 {
+    color: #2b95b3
+}
+
+a {
+    text-decoration: none;
+    color: #2b95b3
+}
+  
+#blog {
+    position: absolute;
+    top: 49%;
+    left: 0;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(0.5turn);
+}
+  
+#code {
+    position: absolute;
+    top: 0;
+    right: calc(45%);
+    /* right: calc(-49%); */
+    /*right: calc(100%/2);*/
+}
+  
+#photos {
+    position: absolute;
+    top: 49%;
+    right: 0;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+}
+  
+#name {
+    position: absolute;
+    bottom: 0;
+    right: calc(45%);
+    /* right: calc(-49%); */
+}
