@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -19,14 +21,17 @@ canvas {
 }
 
 h1 {
-    color: #2b95b3
+    color: #2b95b3;
+    font-family: 'Crete Round', serif;
+    letter-spacing: 1px;
 }
 
 a {
     text-decoration: none;
-    color: #2b95b3
+    color: #2b95b3;
+    font-family: 'Crete Round', serif;
 }
-  
+ 
 #blog {
     position: absolute;
     top: 49%;
@@ -35,11 +40,20 @@ a {
     text-orientation: sideways;
     transform: rotate(0.5turn);
 }
+
+#codeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+}
+
   
 #code {
-    position: absolute;
-    top: 0;
-    left: calc(49%);
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: calc(49%); */
     /* right: calc(-49%); */
     /*right: calc(100%/2);*/
 }
@@ -52,9 +66,17 @@ a {
     text-orientation: sideways;
 }
   
+#nameContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
 #name {
-    position: absolute;
-    bottom: 0;
-    left: calc(49%);
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* left: calc(49%); */
     /* right: calc(-49%); */
 }
