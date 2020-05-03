@@ -67,11 +67,14 @@ function main() {
     return needResize;
   }
 
-  function isMobile(mq) {
-    if (mq.matches) {
-      const controls = new DeviceOrientationControls(camera);
-      controls.update();
-    } 
+  function isMobile(e) {
+    if (!e.alpha) {
+      return;
+    }
+    
+    const controls = new DeviceOrientationControls(camera, true);
+    controls.connect();
+    controls.update();
   }
   
   
@@ -96,7 +99,7 @@ function main() {
     document.addEventListener('mousemove', onMouseMove, false);
     window.addEventListener( 'resize', onResize, false);
     isMobile(mq);
-    window.addEventListener('resize', isMobile, false);
+    window.addEventListener(`deviceorientation`, isMobile, false);
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
