@@ -1,9 +1,12 @@
+// const DeviceOrientationControls = require(`./DeviceOrientationControls.js`);
+
 let camera, scene, renderer;
 const canvas = document.querySelector("#canvas");
 
 const mouse = new THREE.Vector2();
 const target = new THREE.Vector2();
 const windowHalf = new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2);
+const mq = window.matchMedia("(max-width: 700px)");
 
 function main() {
 
@@ -63,6 +66,14 @@ function main() {
     }
     return needResize;
   }
+
+  function isMobile(mq) {
+    if (mq.matches) {
+      const controls = new DeviceOrientationControls(camera);
+      controls.update();
+    } 
+  }
+  
   
   function render(time) {
     time *= 0.001;
@@ -84,6 +95,8 @@ function main() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.addEventListener('mousemove', onMouseMove, false);
     window.addEventListener( 'resize', onResize, false);
+    isMobile(mq);
+    window.addEventListener('resize', isMobile, false);
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
