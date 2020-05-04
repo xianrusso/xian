@@ -7,6 +7,7 @@ const mouse = new THREE.Vector2();
 const target = new THREE.Vector2();
 const windowHalf = new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2);
 const mq = window.matchMedia("(max-width: 700px)");
+const controls = new THREE.DeviceOrientationControls(camera);
 
 function main() {
 
@@ -72,7 +73,7 @@ function main() {
       return;
     }
     
-    const controls = new DeviceOrientationControls(camera, true);
+    controls = new DeviceOrientationControls(camera, true);
     controls.connect();
     controls.update();
   }
@@ -138,6 +139,8 @@ function anim() {
   camera.position.y += ( - target.y - camera.position.y ) * 0.05;
   camera.lookAt(scene.position);
   
+  controls.update();
+
   requestAnimationFrame( anim );
   renderer.render( scene, camera );
 }
