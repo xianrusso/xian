@@ -1,13 +1,12 @@
-// const DeviceOrientationControls = require(`./DeviceOrientationControls.js`);
+import {DeviceOrientationControls} from "./DeviceOrientationControls.js"
 
-let camera, scene, renderer;
+let camera, scene, renderer, controls;
 const canvas = document.querySelector("#canvas");
 
 const mouse = new THREE.Vector2();
 const target = new THREE.Vector2();
 const windowHalf = new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2);
 const mq = window.matchMedia("(max-width: 700px)");
-const controls = new THREE.DeviceOrientationControls(camera);
 
 function main() {
 
@@ -21,7 +20,9 @@ function main() {
   const far = 5;
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z = 1.8;
-  
+ 
+  controls = new DeviceOrientationControls( camera, true );
+
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf2f2f2);
    
@@ -99,8 +100,8 @@ function main() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.addEventListener('mousemove', onMouseMove, false);
     window.addEventListener( 'resize', onResize, false);
-    isMobile(mq);
-    window.addEventListener(`deviceorientation`, isMobile, false);
+    // isMobile(mq);
+    // window.addEventListener(`deviceorientation`, isMobile, false);
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
@@ -139,7 +140,7 @@ function anim() {
   camera.position.y += ( - target.y - camera.position.y ) * 0.05;
   camera.lookAt(scene.position);
   
-  controls.update();
+  // controls.update();
 
   requestAnimationFrame( anim );
   renderer.render( scene, camera );
