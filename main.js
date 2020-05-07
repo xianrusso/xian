@@ -102,6 +102,10 @@ function main() {
     window.addEventListener( 'resize', onResize, false);
     // isMobile(mq);
     // window.addEventListener(`deviceorientation`, isMobile, false);
+    window.addEventListener('deviceorientation', e => {
+      let gammaRotation = e.gamma ? e.gamma * (Math.PI / 600) : 0
+      camera.position.y = gammaRotation
+    })
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
